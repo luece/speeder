@@ -1,0 +1,32 @@
+{
+    "name": "luece/unframed",
+    "type": "library",
+    "description": "Unframed is a PHP micro framework",
+    "keywords": ["framework","micro","api","router"],
+    "homepage": "https://unframed.cc",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin",
+            "email": "unframed@msn.com",
+            "homepage": "https://unframed.cc"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "require-dev": {
+    },
+    "provide": {
+    },
+    "autoload": {
+        "files": ["config/start.php"],
+        "psr-4": {
+            "Speeder\\": "src/",
+            "": "src/"
+        }
+    },
+    "scripts": {
+    }
+
+}
