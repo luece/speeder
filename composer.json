@@ -22,7 +22,7 @@
     "autoload": {
         "files": ["config/start.php"],
         "psr-4": {
-            "Unframed\\": "src"
+            "Unframed\\": "src/"
         }
     },
     "scripts": {
