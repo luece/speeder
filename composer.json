@@ -22,8 +22,7 @@
     "autoload": {
         "files": ["config/start.php"],
         "psr-4": {
-            "Speeder\\": "src/",
-            "": "src/"
+            "Unframed\\": "src"
         }
     },
     "scripts": {
