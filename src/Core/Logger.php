@@ -80,7 +80,7 @@ class Logger
                 $logger->pushProcessor(new MemoryUsageProcessor());
                 $logger->pushProcessor(new MemoryPeakUsageProcessor());
 
-                $logFile = $container->get('settings')['logPath'] . date('md') . '-' . $logName . '.log';
+                $logFile = $container->get('settings')['logger']['path'] . date('md') . '-' . $logName . '.log';
                 $streamHandler = new StreamHandler($logFile, $logLevel);
 
                 // the default date format is "Y-m-d H:i:s"
