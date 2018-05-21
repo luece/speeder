@@ -1,5 +1,5 @@
 <?php
-namespace Unframed\Core;
+namespace Unframed\Handlers;
 
 use Monolog\Logger as log;
 use Monolog\Processor\UidProcessor;

@@ -13,7 +13,7 @@ return [
         'action'      => 'index',
     ],
     'dataPath'               => 'public/data/data/',
-    'configPath'             => 'public/data/config/',
+    'bootstrap'             => 'public/data/bootstrap/',
 
     
 ];

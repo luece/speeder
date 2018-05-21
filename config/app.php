@@ -22,9 +22,3 @@ define('RELEASE', '160803');
 
 //内部版本号
 define('UNFRAMED_VERSION', '0.1.0.0');
-
-//配置文件路径
-!defined('GENERAL') && define('GENERAL', SYS_PATH . 'config/general.yml');
-
-//配置文件格式, 支持 php,yaml,yml,xml
-!defined('GENERAL_FORMAT') && define(GENERAL_FORMAT, 'yaml');

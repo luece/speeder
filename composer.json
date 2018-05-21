@@ -20,7 +20,7 @@
     "provide": {
     },
     "autoload": {
-        "files": ["config/start.php"],
+        "files": ["src/Unframed.php"],
         "psr-4": {
             "Unframed\\": "src/"
         }
