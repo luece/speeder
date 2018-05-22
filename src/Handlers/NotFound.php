@@ -9,7 +9,7 @@ use UnexpectedValueException;
 /**
  * 
  */
-class NotFounda extends AbstractHandler
+class NotFound extends AbstractHandler
 {
     /**
      * Invoke not found handler

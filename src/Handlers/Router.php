@@ -15,7 +15,7 @@ class Router
     {
         $app->any('/[{application}[/{controller}[/{action}]]]', function ($request, $response, $args) {
             $router = $this->get('settings')['router'];
-            var_dump($router);
+
             //application
             $application = isset($router['application']) ? $router['application'] : '';
             $application = isset($args['application']) ? $args['application'] : $application;
@@ -41,10 +41,12 @@ class Router
                 return call_user_func_array([$object, $action], [$request, $response, $args]);
                 //return $object->$action([$request, $response, $args]);
             } else {
-                return $response
-                                ->withStatus(404)
-                                ->withHeader('Content-Type', 'text/html')
-                                ->write('Page not found');
+                return $response->withStatus(404)->withHeader('Content-Type', 'text/html');
+              //  return $this->get('notFoundHandler')($request, $response);
+                
+                
+                                
+                                //->write('Page not found');
             }
         });
         return $app;

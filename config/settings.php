@@ -7,13 +7,12 @@ return [
         'name' => 'Unframed',
         'path' => 'public/data/logs/',
     ],
-    'router'                => [
+    'router'                 => [
         'application' => 'post',
         'controller'  => 'index',
         'action'      => 'index',
     ],
     'dataPath'               => 'public/data/data/',
-    'bootstrap'             => 'public/data/bootstrap/',
-
-    
+    'bootstrap'              => 'public/data/bootstrap/',
+    'viewType'               => 'twig', // php or twig
 ];
