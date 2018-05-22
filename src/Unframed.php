@@ -75,8 +75,11 @@ class Unframed
           $app->add(new \App\Middleware\CsrfViewMiddleware($this->container));
          */
 
-
-        //if ()
+        $appClass = $settings['app']['name'] . '\\App';
+        if (class_exists($appClass)) {
+            $appObj = new $appClass;
+            call_user_func_array($appObj, [$app]);
+        }
 
         $handler = 'routerHandler';
         if ($this->container->has($handler)) {
@@ -155,14 +158,14 @@ class Unframed
         }
 
         $settings['app'] = [
-            'name'      => ucwords($settings['router']['application']),
-            'path'      => BASE_PATH . 'src/' . ucwords($settings['router']['application']) . '/',
-            'res'       => BASE_PATH . 'src/' . ucwords($settings['router']['application']) . '/Resources/',
-            'bootstrap' => BASE_PATH . 'src/' . ucwords($settings['router']['application']) . '/Resources/bootstrap/',
-            'views'     => BASE_PATH . 'src/' . ucwords($settings['router']['application']) . '/Resources/views/',
+            'name'   => ucwords($settings['router']['application']),
+            'path'   => BASE_PATH . 'src/' . ucwords($settings['router']['application']) . '/',
+            'res'    => BASE_PATH . 'src/' . ucwords($settings['router']['application']) . '/Resources/',
+            'config' => BASE_PATH . 'src/' . ucwords($settings['router']['application']) . '/Resources/config/',
+            'views'  => BASE_PATH . 'src/' . ucwords($settings['router']['application']) . '/Resources/views/',
         ];
 
-        $configFile = $settings['app']['bootstrap'] . 'settings.php';
+        $configFile = $settings['app']['config'] . 'settings.php';
         if (is_file($configFile)) {
             $config = include $configFile;
             if (is_array($config)) {

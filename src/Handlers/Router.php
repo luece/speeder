@@ -41,12 +41,8 @@ class Router
                 return call_user_func_array([$object, $action], [$request, $response, $args]);
                 //return $object->$action([$request, $response, $args]);
             } else {
-                return $response->withStatus(404)->withHeader('Content-Type', 'text/html');
-              //  return $this->get('notFoundHandler')($request, $response);
-                
-                
-                                
-                                //->write('Page not found');
+                $notFoundHandler = $this->get('notFoundHandler');
+                return $notFoundHandler($request, $response);
             }
         });
         return $app;
